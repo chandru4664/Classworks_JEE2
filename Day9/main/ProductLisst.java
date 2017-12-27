@@ -1,6 +1,8 @@
 package com.htc.Day9.main;
 
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,8 +15,19 @@ import com.htc.Day9.Entity.Product;
 public class ProductLisst {
 public static void main(String[] args) {
 	List<Product> products=new ArrayList<>();
-	products.add(new Product("p123","pen",10.45,new Date()));
-	products.add(new Product("p167","pencil",5.45,new Date()));
+	try {
+		Date d=new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse("12-05-2012 14:25:25");
+		products.add(new Product("p123","pen",10.45,d));
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	try {
+		products.add(new Product("p167","pencil",5.45,new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse("14-06-2013 16:25:25")));
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	products.add(new Product("p15","Eracer",3.45,new Date()));
 	products.add(new Product("p183","ruler",20.45,new Date()));
 	
