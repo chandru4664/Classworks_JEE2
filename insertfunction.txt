@@ -1,0 +1,90 @@
+﻿create table Student(studentid character(5),studentname varchar(30),course varchar(30));
+select * from student
+
+
+
+
+
+create or replace function Myinsert(sid character(5),sname varchar(30),course varchar(30))
+returns void 
+
+as
+
+$body$
+
+begin
+
+insert into student values(sid,sname,course);
+
+END
+
+$body$
+
+
+LANGUAGE PLPGSQL
+
+
+
+
+
+
+select Myinsert('s100','sirisha','java');
+
+import package(java.sql.*)
+
+load Driver
+register Driver(Class.forName("org.postgresql.Driver");)
+establish Connection using D
+
+Connection con=DriverManager.getConnetion(url,username,password);
+
+1.Statement
+2.preparedStatement
+3.callable Statement
+
+Statement st=con.crreateStatement();
+
+excuteQuery->select
+executeUpdate->insert update delete
+execute->
+
+ResultSet rs=st.executeQuery(select  id ,name from ___);
+while(rs.next())
+{
+int id=rs.getInt(1);
+String name=rs.getString(2)
+}
+
+
+
+
+Connection properties file
+**********
+driver:org.postgresql.Driver
+url:jdbc:postgresql://localhost:5432/postgres
+username:postgres
+password:123Welcome
+
+
+connectionProperties.load(new FileInputStream("connection.PROPERTIES"));
+	
+	public Connection createConnection() throws ClassNotFoundException, SQLException{
+		try{
+			Class.forName(connectionProperties.getProperty("driver"));
+			Connection connection=DriverManager.getConnection(connectionProperties.getProperty("url"),connectionProperties.getProperty("username"),connectionProperties.getProperty("password"));
+			return connection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
