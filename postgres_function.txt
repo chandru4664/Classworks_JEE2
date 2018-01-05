@@ -1,0 +1,43 @@
+CREATE OR REPLACE FUNCTION addemployee(username varchar(20), password varchar(15), useraddress varchar(50), email varchar(20))
+
+RETURNS integer
+ AS
+$hghds$
+
+
+DECLARE
+
+I INTEGER:=0;
+
+BEGIN
+
+INSERT INTO userdetail VALUES (username, password, useraddress, email);
+
+I:=1;
+
+return I;
+END;
+
+$hghds$
+
+LANGUAGE 'plpgsql'
+
+
+fileName_languagecode_countrycode.properties
+
+
+
+
+
+driver:org.postgresql.Driver
+url:jdbc:postgresql://localhost:5432/postgres
+username:postgres
+password:123Welcome
+
+1024*1024*2
+
+
+intsert into user values(....);
+
+
+
