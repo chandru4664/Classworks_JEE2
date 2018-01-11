@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books xmlns="http://www.htc.org/books" 
+       xmlns:ns="http://www.w3.org/2001/XMLSchema-instance" 
+       ns:schemaLocation="http://www.htc.org/books books.xsd">
+       
+	<book isbn="AB4567">
+		<title>Java Programming</title>
+		<authors>
+			<author>
+				<authname>XYX</authname>
+				<address>Chennai.</address>
+			</author>
+		</authors>
+		<price>450.0</price>
+		<edition>4</edition>
+		<category>Technical</category>
+	</book>
+	<book isbn="AB4568">
+		<title>Python Programming</title>
+		<authors>
+			<author>
+				<authname>XYX</authname>
+				<address>Chennai.</address>
+			</author>
+		</authors>
+		<price>340.0</price>
+		<edition>2</edition>
+		<category>Technical</category>
+	</book>
+	<book isbn="AB4569">
+		<title>C Programming</title>
+		<authors>
+			<author>
+				<authname>XYX</authname>
+				<address>Chennai.</address>
+			</author>
+		</authors>
+		<price>250.0</price>
+		<edition>4</edition>
+		<category>Technical</category>
+	</book>
+</books>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	    targetNamespace="http://www.htc.org/books" 
+	    xmlns="http://www.htc.org/books" 
+	    elementFormDefault="qualified">
+	    
+	<xsd:element name="books" type="books_ty"/>
+	<xsd:complexType name="books_ty">
+		<xsd:sequence>
+			<xsd:element name="book" type="book_ty"  minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="book_ty">
+		<xsd:sequence>
+			<xsd:element name="title" type="xsd:string"/>
+			<xsd:element name="authors" type="authors_ty"/>
+			<xsd:element name="price" type="price_ty"/>
+			<xsd:element name="edition" type="xsd:positiveInteger" />
+			<xsd:element name="category" type="category_ty"/>
+		</xsd:sequence>
+		<xsd:attribute name="isbn" type="xsd:string" use="required"/>
+	</xsd:complexType>		    
+	
+	<xsd:simpleType name="price_ty" >
+		<xsd:restriction base="xsd:double">
+			<xsd:minInclusive value="100.0"/>
+			<xsd:maxInclusive value="450.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="category_ty">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Technical"/>
+			<xsd:enumeration value="Science"/>
+			<xsd:enumeration value="Novels"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="authors_ty">
+		<xsd:sequence>
+			<xsd:element name="author" type="author_ty" minOccurs="1" maxOccurs="3"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="author_ty">
+		<xsd:sequence>
+			<xsd:element name="authname" type="xsd:string"/>
+			<xsd:element name="address" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	
+</xsd:schema>
+
+
+
+
+
+
+
+
+
+
+
+
