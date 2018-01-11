@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentsTy xmlns="http://www.htc.org/students">
+    <student>
+        <studentid>s126</studentid>
+        <studentname>Ria</studentname>
+        <course>Android</course>
+    </student>
+</studentsTy>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	    targetNamespace="http://www.htc.org/students" 
+	    xmlns="http://www.htc.org/students" 
+	    elementFormDefault="qualified">
+	    
+	    
+<xsd:element name="students" type="students_ty"/>
+
+<xsd:complexType name="students_ty">
+<xsd:sequence>
+<xsd:element name="student" type="student_ty"  minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="student_ty">
+<xsd:sequence>
+
+<xsd:element name="studentid" type="id_ty"/>
+<xsd:element name="studentname" type="xsd:string"/>
+<xsd:element name="course" type="xsd:string"/>
+
+</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:simpleType name="id_ty">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="s\d{3}"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
+

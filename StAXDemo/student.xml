@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns="http://www.htc.org/students" 
+       xmlns:ns="http://www.w3.org/2001/XMLSchema-instance" 
+       ns:schemaLocation="http://www.htc.org/students students.xsd">
+
+<student>
+<studentid>s109</studentid>
+<studentname>xxx</studentname>
+<course>java</course>
+</student>
+
+<student>
+<studentid>s108</studentid>
+<studentname>yyy</studentname>
+<course>PHP</course>
+</student>
+
+</students>
