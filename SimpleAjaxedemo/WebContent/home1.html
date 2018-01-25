@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function loadXMLDoc()
+{
+var xmlhttp;
+var k=document.getElementById("id2").value;
+var urls="Checkservlet";
+ 
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        //document.getElementById("err").style.color="red";
+        document.getElementById("err").innerHTML=xmlhttp.responseText;
+ 
+    }
+  }
+xmlhttp.open("POST",urls,true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("ver="+k);
+
+
+}
+</script>
+</head>
+<body >
+ 
+Enter name: <input type="text" name="id2" id="id2" onkeyup="loadXMLDoc()">
+<span id="err"> </span>
+ 
+</body>
+
+</html>
