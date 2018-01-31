@@ -1,0 +1,88 @@
+Framework
+
+framework predefined api which we can inbuilt in our program.
+java fws:
+jSF
+Hibernate
+maven
+spring
+STruts
+play
+
+Spring Framework:
+
+
+Spring is a complete and a modular freamework for  developing enprise appln in java
+
+MVC
+
+Spring features :
+
+
+opensource
+comprehensive tools
+light weight
+solve problems
+freamework of framework
+avail array of resurces
+-security
+-mvc
+--JTA
+-JMS
+-Junit
+
+
+IoC Container
+
+
+creating objects
+wiring them together
+configuring them
+Manage their complete lifecycle
+
+
+
+
+________________________________________
+
+class Rider
+{
+
+Bike b;
+
+public Rider()
+{
+b=new Bike();
+}
+
+public void setB(Bike b)
+{
+this.b=b;
+{
+
+
+
+}
+
+
+
+class Bike
+{
+}
+
+
+main()
+{
+Rider r=new Rider();
+
+
+Bike b=new Bike();
+r.setB(b);//low coupling
+
+
+
+
+
+
+
+
