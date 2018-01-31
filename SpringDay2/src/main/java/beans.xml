@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+<bean id="address"	 class="com.htc.spring4.beans.Address" >
+
+	<property name="doorno" value="7/8" />
+	<property name="city" value="Salem" />
+	<property name="street" value="vela Street" />
+	<property name="pincode" value="636002" />
+
+</bean>
+
+<bean id="college" class="com.htc.spring4.beans.College" >
+
+	<property name="collegeName" value="MKCE" />
+	<property name="collegeAddress" value="Karur" />
+
+</bean>
+
+<bean id="student"   class="com.htc.spring4.beans.Student" >
+
+	<property name="regno" value="MKCE93" />
+	<property name="studentName" value="Maha" />
+	<property name="address" ref="address" />
+	<property name="college" ref="college" />
+	
+</bean>
+
+</beans>
