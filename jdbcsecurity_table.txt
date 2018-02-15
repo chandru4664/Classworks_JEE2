@@ -1,0 +1,55 @@
+﻿drop table user_roles;
+drop table users;
+drop table roles;
+
+create table USERS (
+   sso_id VARCHAR(30) NOT NULL,
+   password VARCHAR(100) NOT NULL,
+   first_name VARCHAR(30) NOT NULL,
+   last_name  VARCHAR(30) NOT NULL,
+   email VARCHAR(30) NOT NULL,
+   state VARCHAR(30) NOT NULL,  
+   PRIMARY KEY (sso_id));
+   
+/* USER_PROFILE table contains all possible roles */
+create table ROLES(
+   roleid INT NOT NULL,
+   type VARCHAR(30) NOT NULL,
+   PRIMARY KEY (roleid),
+   UNIQUE (type)
+);
+
+/* JOIN TABLE for MANY-TO-MANY relationship*/ 
+CREATE TABLE USER_ROLES (
+    user_id varchar(30) NOT NULL,
+    role_id INT NOT NULL,
+    PRIMARY KEY (user_id, role_id),
+    CONSTRAINT FK_APP_USER FOREIGN KEY (user_id) REFERENCES USERS (sso_id),
+    CONSTRAINT FK_USER_PROFILE FOREIGN KEY (role_id) REFERENCES ROLES (roleid)
+);
+
+insert into users values('bhavani', '123Welcome', 'Anish Kumar' ,'A.K', 'anish@htc.com', 'Active');
+insert into users values('htcuser', 'password', 'Kiran Reddy' ,'AP', 'kiran@htc.com', 'Active');
+insert into users values('admin', 'admin', 'Anand' ,'A.K', 'anand@htc.com', 'Active');
+insert into users values( 'vicky', 'welcome123', 'Anand' ,'A.K', 'vicky@htc.com', 'Inactive');
+insert into users values('rani', 'welcome', 'Rani' ,'R', 'rani@htc.com', 'Locked');
+
+select * from users;
+
+insert into roles values(1, 'ROLE_USER');
+insert into roles values(2, 'ROLE_EDITOR');
+insert into roles values(3, 'ROLE_ADMIN');
+
+select * from roles;
+
+insert into user_roles values('bhavani',1);
+insert into user_roles values('htcuser',1);
+insert into user_roles values('htcuser',2);
+insert into user_roles values('admin',1);
+insert into user_roles values('admin',2);
+insert into user_roles values('admin',3);
+insert into user_roles values('vicky',1);
+insert into user_roles values('rani',2);
+
+select * from user_roles;
+
